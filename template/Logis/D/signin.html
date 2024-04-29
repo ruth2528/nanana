@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Rapid Repairs</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign-In</title>
+    <link rel="stylesheet" href="style1.css" />
+</head>
+<body>
+    <section class="container">
+        <header>Sign-up
+            <br>
+        <p>
+        <a href="homebfsp.html">Home</a><br>
+        <a href="signup1.html">Not signed up? please click here to signup</a>
+        </p>
+        </header>
+        <form id="signin-form" action="#" class="form" onsubmit="return signIn()">
+        
+
+            <div class="input-box">
+                <label>Email Address</label>
+                <input type="email" id="email" placeholder="Enter email address" required>
+            </div>
+
+            
+            <div class="input-box">
+              <label>Password</label>
+               <input type="password" id="password" placeholder="Enter password" required>
+            </div>
+            
+
+            <button type="signIn" id="signUp">signin</button>
+        </form>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.0/firebase-app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.0/firebase-database.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.0/firebase-auth.js"></script>
+    <script src="signin.js"></script>
+</body>
+</html>
