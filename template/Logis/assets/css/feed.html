@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Feedback Widget</title>
+</head>
+
+<body>
+    <div class="feedback-widget">
+        <a href=""><span>Feedback Please! <i class="fas fa-comment-dots"></i></span></a>
+        <div class="form">
+            <form>
+                <div class="stars">
+                    <input type="radio" name="rating" id="rating-5">
+                    <label for="rating-5" class="fas fa-star"></label>
+                    <input type="radio" name="rating" id="rating-4">
+                    <label for="rating-4" class="fas fa-star"></label>
+                    <input type="radio" name="rating" id="rating-3">
+                    <label for="rating-3" class="fas fa-star"></label>
+                    <input type="radio" name="rating" id="rating-2">
+                    <label for="rating-2" class="fas fa-star"></label>
+                    <input type="radio" name="rating" id="rating-1">
+                    <label for="rating-1" class="fas fa-star"></label>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" id="" cols="30" rows="10" placeholder="send your feedback" required></textarea>
+                </div>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+        <div class="thanks">
+            Thanks for your feedback! <i class="fas fa-thumbs-up"></i>
+        </div>
+    </div>
+    <script>
+        $(function() {
+            $(".feedback-widget a").on("click", function(e) {
+                $(".feedback-widget .form").show();
+                $(".thanks").hide();
+                $(".feedback-widget a").hide();
+                e.preventDefault();
+            });
+            $(".form form").on("submit", function(e) {
+                $(".feedback-widget .form").hide();
+                $(".thanks").show();
+                e.preventDefault();
+            });
+        });
+    </script>
+</body>
+
+</html>
