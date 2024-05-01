@@ -220,7 +220,8 @@
       </div>-->
      
       <button style="background-color: blue; color: white; align-items: center;">  <a href="get-a-quote.html"></a>CALL NOW</button></centre>
-      <a href="feedback.html"></a><button style="background-color: blue; color: white; align-items: center;">FEEDBACK</button></centre></a>
+      <button id="feedbackButton" style="background-color: blue; color: white; align-items: center;">FEEDBACK</button>
+
       </div>
     </div><!-- End Card Item -->
 
@@ -242,7 +243,8 @@
         <span class="star">&#9733;</span>
       </div>-->
       <button style="background-color: blue; color: white; align-items: center;">CALL NOW</button></centre>
-      <a href="feedback.html"></a><button style="background-color: blue; color: white; align-items: center;">FEEDBACK</button></centre></a>
+      <button id="feedbackButton" style="background-color: blue; color: white; align-items: center;">FEEDBACK</button>
+
       </div>
     </div><!-- End Card Item -->
 
@@ -251,19 +253,14 @@
         <div class="card-img">
           <img src="https://cdn-icons-png.flaticon.com/512/4715/4715329.png" width="200" alt="" class="img-fluid">
         </div>
-        <h3><a href="service-details.html" class="stretched-link">Vargheese Korah</a></h3>
-      <!-- <p>Plumbing is essential for the distribution of clean water and removal of waste. Professional plumbers ensure the integrity and efficiency of these systems.</p>-->
-     <!-- <div>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-      </div> -->
-      <button style="background-color: blue; color: white; align-items: center;">CALL NOW</button></centre>
-      <a href="feedback.html"></a><button style="background-color: blue; color: white; align-items: center;">FEEDBACK</button></centre></a>
+        <div>
+          <h3 class="name-stretched-link">Vargheese Korah</h3>
+          <button class="button-call-now" style="background-color: blue; color: white;" onclick="callNowClicked(this)">CALL NOW</button>
+          <button class="button-feedback" style="background-color: blue; color: white;" onclick="feedbackClicked(this)">FEEDBACK</button>
+        </div>
       </div>
     </div><!-- End Card Item -->
+    
 
     <div class="col-lg-3 col-md-3" data-aos="fade-up" data-aos-delay="100">
       <div class="card">
@@ -280,7 +277,8 @@
         <span class="star">&#9733;</span>
       </div> -->
       <button style="background-color: blue; color: white; align-items: center;">CALL NOW</button></centre>
-      <a href="feedback.html"></a><button style="background-color: blue; color: white; align-items: center;">FEEDBACK</button></centre></a>
+      <button id="feedbackButton" style="background-color: blue; color: white; align-items: center;">FEEDBACK</button>
+
       </div>
     </div><!-- End Card Item -->
 
@@ -299,7 +297,8 @@
         <span class="star">&#9733;</span>
       </div> -->
       <button style="background-color: blue; color: white; align-items: center;">CALL NOW</button></centre>
-      <a href="feedback.html"></a><button style="background-color: blue; color: white; align-items: center;">FEEDBACK</button></centre></a>
+      <button id="feedbackButton" style="background-color: blue; color: white; align-items: center;">FEEDBACK</button>
+
       </div>
     </div><!-- End Card Item -->
     <div class="col-lg-3 col-md-3" data-aos="fade-up" data-aos-delay="100">
@@ -317,7 +316,8 @@
         <span class="star">&#9733;</span>
       </div> -->
       <button style="background-color: blue; color: white; align-items: center;">CALL NOW</button></centre>
-      <a href="feedback.html"></a><button style="background-color: blue; color: white; align-items: center;">FEEDBACK</button></centre></a>
+      <button id="feedbackButton" style="background-color: blue; color: white; align-items: center;">FEEDBACK</button>
+
       </div>
     </div><!-- End Card Item -->
 
@@ -413,6 +413,26 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+function callNowClicked(button) {
+  var name = button.parentElement.querySelector('.name-stretched-link').textContent;
+  // Add your JavaScript code for the "Call Now" button functionality here
+  // You can use the name parameter
+  window.location.href = 'profile.html';
+  // Then, redirect to the profile.html page or perform other actions
+}
+
+function feedbackClicked(button) {
+  var name = button.parentElement.querySelector('.name-stretched-link').textContent;
+  // Add your JavaScript code for the "Feedback" button functionality here
+  // You can use the name parameter
+  window.location.href = 'feedback.html';
+  // Then, redirect to the feedback.html page or perform other actions
+}
+
+
+  </script>
+  
 
 </body>
 
