@@ -133,14 +133,41 @@
               <a href="#" class="active">Customer Satisfaction</a>
               
             </div>
-            <form action="#" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
+           <!-- <form action="#" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
               <input type="text" class="form-control" placeholder="search location">
+              <select >
+                <option value="PALAI">PALAI
+
+                <option value="ETTUMANOOR">ETTUMANOOR
+                <option value="BHARANANGANAM">BHARANANGANAM
+                <option value="ERATTUPETTA">ERATTUPETTA
+                  <option value="MANARCADU">MANARCADU
+                    <option value="KOTTAYAM">KOTTAYAM
+              </select>
               <button type="submit" class="btn btn-primary">Search</button>
-            </form>
-            <h1>
+              
+             
+
+            </form>-->
+            <form action="#" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
+              
+              <select id="location-select" class="form-control" aria-label="Select location">
+                  <option value="" selected disabled hidden>Select location</option>
+                  <option value="PALAI">PALAI</option>
+                  <option value="ETTUMANOOR">ETTUMANOOR</option>
+                  <option value="BHARANANGANAM">BHARANANGANAM</option>
+                  <option value="ERATTUPETTA">ERATTUPETTA</option>
+                  <option value="MANARCADU">MANARCADU</option>
+                  <option value="KOTTAYAM">KOTTAYAM</option>
+              </select>
+              <button type="submit" class="btn btn-primary">Search</button>
+          </form>
+
+            <!--<h1>
             <p><b> we offer a comprehensive range of plumbing services to meet all your residential and commercial needs.
-               Our team of experienced plumbers is dedicated to providing reliable and efficient solutions, ensuring your plumbing systems are functioning optimally.</b></p></h1>
+               Our team of experienced plumbers is dedicated to providing reliable and efficient solutions, ensuring your plumbing systems are functioning optimally.</b></p></h1>-->
            </div>
+           
 
           <div class="col-lg-8">
             <img src="https://t3.ftcdn.net/jpg/00/27/61/68/360_F_27616800_mP42aLqY152iln3kHDTiAvlMrDoYU606.jpg" width="500">
@@ -218,9 +245,8 @@
         <span class="star">&#9733;</span>
         <span class="star">&#9733;</span>
       </div>-->
-     
-      <button style="background-color: blue; color: white; align-items: center;">  <a href="get-a-quote.html"></a>CALL NOW</button></centre>
-      <button id="feedbackButton" style="background-color: blue; color: white; align-items: center;">FEEDBACK</button>
+      <button class="button-call-now" style="background-color: blue; color: white;" onclick="callNowClicked(this)">CALL NOW</button>
+      <button class="button-feedback" style="background-color: blue; color: white;" onclick="feedbackClicked(this)">FEEDBACK</button>
 
       </div>
     </div><!-- End Card Item -->
@@ -242,9 +268,8 @@
         <span class="star">&#9733;</span>
         <span class="star">&#9733;</span>
       </div>-->
-      <button style="background-color: blue; color: white; align-items: center;">CALL NOW</button></centre>
-      <button id="feedbackButton" style="background-color: blue; color: white; align-items: center;">FEEDBACK</button>
-
+      <button class="button-call-now" style="background-color: blue; color: white;" onclick="callNowClicked(this)">CALL NOW</button>
+      <button class="button-feedback" style="background-color: blue; color: white;" onclick="feedbackClicked(this)">FEEDBACK</button>
       </div>
     </div><!-- End Card Item -->
 
@@ -276,9 +301,9 @@
         <span class="star">&#9733;</span>
         <span class="star">&#9733;</span>
       </div> -->
-      <button style="background-color: blue; color: white; align-items: center;">CALL NOW</button></centre>
-      <button id="feedbackButton" style="background-color: blue; color: white; align-items: center;">FEEDBACK</button>
-
+      
+      <button class="button-call-now" style="background-color: blue; color: white;" onclick="callNowClicked(this)">CALL NOW</button>
+      <button class="button-feedback" style="background-color: blue; color: white;" onclick="feedbackClicked(this)">FEEDBACK</button>
       </div>
     </div><!-- End Card Item -->
 
@@ -296,9 +321,8 @@
         <span class="star">&#9733;</span>
         <span class="star">&#9733;</span>
       </div> -->
-      <button style="background-color: blue; color: white; align-items: center;">CALL NOW</button></centre>
-      <button id="feedbackButton" style="background-color: blue; color: white; align-items: center;">FEEDBACK</button>
-
+      <button class="button-call-now" style="background-color: blue; color: white;" onclick="callNowClicked(this)">CALL NOW</button>
+          <button class="button-feedback" style="background-color: blue; color: white;" onclick="feedbackClicked(this)">FEEDBACK</button>
       </div>
     </div><!-- End Card Item -->
     <div class="col-lg-3 col-md-3" data-aos="fade-up" data-aos-delay="100">
@@ -315,9 +339,8 @@
         <span class="star">&#9733;</span>
         <span class="star">&#9733;</span>
       </div> -->
-      <button style="background-color: blue; color: white; align-items: center;">CALL NOW</button></centre>
-      <button id="feedbackButton" style="background-color: blue; color: white; align-items: center;">FEEDBACK</button>
-
+      <button class="button-call-now" style="background-color: blue; color: white;" onclick="callNowClicked(this)">CALL NOW</button>
+          <button class="button-feedback" style="background-color: blue; color: white;" onclick="feedbackClicked(this)">FEEDBACK</button>
       </div>
     </div><!-- End Card Item -->
 
