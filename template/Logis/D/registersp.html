@@ -12,10 +12,10 @@
     <section class="container">
         <header>Sign-up
             <br>
-        <p>
-        <a href="homebfsp.html">Home</a>/
-        <a href="signin.html">Sign-in</a>
-        </p>
+            <p>
+                <a href="homebfsp.html">Home</a>/
+                <a href="signin.html">Sign-in</a>
+            </p>
         </header>
         <form id="registrationForm" class="form">
             <div class="input-box">
@@ -48,62 +48,89 @@
                     <input id="birthDate" type="date" placeholder="Enter birth date" required />
                 </div>
             </div>
-            
             <div class="input-box address">
                 <label>Address</label>
                 <div class="column">
-                    <div class="select-box">
-                        <select id="district" required>
-                            <option hidden>Select District</option>
-                            <option>Alappuzha</option>
-                            <option>Ernakulam</option>
-                            <option>Idukki</option>
-                            <option>Kannur</option>
-                            <option>Kasaragod</option>
-                            <option>Kollam</option>
-                            <option>Kottayam</option>
-                            <option>Kozhikode</option>
-                            <option>Malappuram</option>
-                            <option>Palakkad</option>
-                            <option>Pathanamthitta</option>
-                            <option>Thiruvananthapuram</option>
-                            <option>Thrissur</option>
-                            <option>Wayanad</option>
-                        </select>
+                    <div class="input-half">
+                        <div class="select-box">
+                            <select id="district" required>
+                                <option hidden>Select District</option>
+                                <option value="Alappuzha">Alappuzha</option>
+                                <option value="Ernakulam">Ernakulam</option>
+                                <option value="Idukki">Idukki</option>
+                                <option value="Kannur">Kannur</option>
+                                <option value="Kasaragod">Kasaragod</option>
+                                <option value="Kollam">Kollam</option>
+                                <option value="Kottayam">Kottayam</option>
+                                <option value="Kozhikode">Kozhikode</option>
+                                <option value="Malappuram">Malappuram</option>
+                                <option value="Palakkad">Palakkad</option>
+                                <option value="Pathanamthitta">Pathanamthitta</option>
+                                <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+                                <option value="Thrissur">Thrissur</option>
+                                <option value="Wayanad">Wayanad</option>
+                            </select>
+                        </div>
                     </div>
-                    
-                    <input id="city" type="text" placeholder="Enter your city" required />
+                    <div class="input-half">
+                        <div class="select-box">
+                            <select id="city" required>
+                                <option hidden>Select City</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
                 <div class="column">
-                    <input id="region" type="text" placeholder="Enter your region" required />
-                    <input id="postalCode" type="number" placeholder="Enter postal code" required />
+                    <input id="description" type="text" placeholder="give a brief description" required />
+                    <input id="contactnum" type="text" placeholder="Enter your contact number here " required />
                 </div>
             </div>
+        
     
             <button id="signUp1" type="button" >Register</button>
         </form>
     </section>
+ 
 
-    <!--<script>
-        function registerUser() {
-            var role = document.querySelector('input[name="role"]:checked').value;
-            if (role === "customer") {
-                // Redirect to home page for customer
-                window.location.href = "password.html";
-            } else if (role === "serviceprovider") {
-                // Redirect to page for additional details for service provider
-                window.location.href = "serviceproviderdetail.html";
-            }
-            return false; // Prevent form submission
+    <script>
+        // Function to populate cities based on selected district
+        function populateCities() {
+            var district = document.getElementById("district").value;
+            var cityDropdown = document.getElementById("city");
+            cityDropdown.innerHTML = ""; // Clear previous options
+
+            // Define cities based on the selected district
+            var cities = {
+    "Alappuzha": ["Alappuzha Town", "Ambalappuzha", "Cherthala", "Haripad", "Kayamkulam", "Mavelikkara", "Chengannur", "Thiruvalla", "Karthikappally", "Muhamma", "Punnapra", "Thanneermukkom", "Chennam Pallipuram", "Thakazhi", "Ramankary"],
+    "Ernakulam": ["Kochi", "Aluva", "Kothamangalam", "Perumbavoor", "Muvattupuzha", "Angamaly", "North Paravur", "Thrippunithura", "Kakkanad", "Kalamassery", "Mattancherry", "Cherai", "Thiruvankulam", "Koothattukulam", "Piravom"],
+    "Idukki": ["Munnar", "Thodupuzha", "Idukki", "Adimali", "Nedumkandam", "Painavu", "Kattappana", "Vandiperiyar", "Rajakkad", "Udumbanchola", "Devikulam", "Kumily", "Peerumedu", "Elappara"],
+    "Kannur": ["Kannur", "Thalassery", "Payyannur", "Kasaragod", "Kuthuparamba", "Iritty", "Mattannur", "Panoor", "Taliparamba", "Peringathur", "Kanhirode", "Keezhallur", "Kunhimangalam", "Munderi"],
+    "Kasaragod": ["Kasaragod", "Kanhangad", "Nileshwar", "Cheruvathur", "Manjeswaram", "Bekal", "Udma", "Kumbla", "Padanna", "Narampady", "Pallikkara", "Koippadu", "Kumbala"],
+    "Kollam": ["Kollam", "Punalur", "Karunagappally", "Kottarakkara", "Chavara", "Paravur", "Kunnathur", "Pathanapuram", "Sasthamkotta", "Oachira", "Chadayamangalam", "Kottiyam", "Kundara", "Eravipuram"],
+    "Kottayam": ["Kottayam", "Changanassery", "Pala", "Kanjirappally", "Vaikom", "Ettumanoor", "Thiruvalla",  "Chingavanam", "Kuravilangad", "Neendoor", "Puthuppally", "Kanjikkuzhi", "Manimala"],
+    "Kozhikode": ["Kozhikode", "Koyilandy", "Vadakara", "Feroke", "Perambra", "Mavoor", "Kunnamangalam", "Ramanattukara", "Thamarassery", "Koduvally", "Beypore", "Kodanchery", "Thalakulathur"],
+    "Malappuram": ["Malappuram", "Manjeri", "Ponnani", "Tirur", "Perinthalmanna", "Cherpulassery", "Kottakkal", "Nilambur", "Tanur", "Parappanangadi", "Wandoor", "Edappal", "Valanchery", "Vengara"],
+    "Palakkad": ["Palakkad", "Ottapalam", "Chittur-Thathamangalam", "Alathur", "Mannarkkad", "Shoranur", "Cherpulassery", "Kongad", "Pattambi", "Thrithala", "Kuzhalmannam", "Kollengode", "Parli", "Nemmara"],
+    "Pathanamthitta": ["Thiruvalla", "Adoor", "Pathanamthitta", "Pandalam", "Kozhencherry", "Ranni", "Konni", "Mallappally", "Aranmula", "Kadapra", "Niranam", "Thadiyoor", "Kumbanad", "Kunnamthanam"],
+    "Thiruvananthapuram": ["Thiruvananthapuram", "Neyyattinkara", "Attingal", "Nedumangad", "Varkala", "Kattakada", "Nemom", "Kovalam", "Pothencode", "Parassala", "Vattiyoorkavu", "Vellanad", "Kudappanakunnu", "Kazhakoottam", "Vizhinjam"],
+    "Thrissur": ["Thrissur", "Kodungallur", "Chalakudy", "Kunnamkulam", "Guruvayur", "Irinjalakuda", "Wadakkanchery", "Chavakkad", "Thriprayar", "Mala", "Mukundapuram", "Mulankunnathukavu"],
+    "Wayanad": ["Kalpetta", "Mananthavady", "Sulthan Bathery", "Vythiri", "Panamaram", "Meppadi", "Pulpally", "Kaniyambetta", "Thariode", "Vellamunda", "Nenmeni", "Muttil", "Mullankolli", "Muppathadom", "Padichira"]
+};
+
+
+            // Populate cities dropdown
+            cities[district].forEach(function(city) {
+                var option = document.createElement("option");
+                option.text = city;
+                cityDropdown.add(option);
+            });
         }
-    </script>-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.0/firebase-app.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.0/firebase-database.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.0/firebase-auth.js"></script>
 
-    <script src="sample.js"></script>
-   
+        // Event listener for district dropdown change
+        document.getElementById("district").addEventListener("change", populateCities);
+
+        // Initial population of cities based on the selected district
+        populateCities();
     </script>
-    
 </body>
 </html>
