@@ -1697,6 +1697,30 @@ section {
   color: var(--color-primary);
 }
 
+.card {
+  position: relative;
+}
+
+.button-call-now,
+.button-feedback {
+  width: calc(100% - 20px);
+  margin: 10px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.button-call-now {
+  margin-top: 20px;
+}
+
+.button-feedback {
+  margin-bottom: 20px;
+}
+
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/

@@ -11,6 +11,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+firebase.auth().languageCode = 'en';
 
 // Reference to the Firebase Realtime Database
 var samplessdb = firebase.database().ref('commonsignup3');
@@ -43,12 +44,14 @@ function submitform(e) {
             // Save form values to Firebase Realtime Database
             if (role === 'customer') {
                 // Save data for customer
-                savemessage(email, fullname, password, role);
+                savemessage(user.uid,email, fullname, password, role);
+                window.location.href = "../indesasu.html";
             } else if (role === 'service provider') {
                 
                 // Redirect to register.html for additional information
-                window.location.href = "registersp.html?email=" + encodeURIComponent(email) + "&fullname=" + encodeURIComponent(fullname) + "&role=" + encodeURIComponent(role);
-                savemessage(email, fullname, password, role);
+                window.location.href = "registersp.html?uid=" + user.uid + "&email=" + encodeURIComponent(email) + "&fullname=" + encodeURIComponent(fullname) + "&role=" + encodeURIComponent(role);
+
+                savemessage(user.uid,email, fullname, password, role);
             }
         })
         .catch((error) => {
@@ -59,7 +62,7 @@ function submitform(e) {
 }
 
 // Function to save form values to Firebase Realtime Database
-const savemessage = (email, fullname, password, role) => {
+const savemessage = (userId,email, fullname, password, role) => {
     var userData = {
         email: email,
         fullname: fullname,
@@ -68,13 +71,13 @@ const savemessage = (email, fullname, password, role) => {
     };
 
     // Save user data to Firebase Realtime Database
-    samplessdb.push(userData);
-
+   // samplessdb.push(userData);
+    samplessdb.child(userId).set(userData);
     // Log saved data
     console.log("Data saved to Firebase:", userData);
 
      // After saving data to database, updateDatabaseFromRegisterSP2() will be called
-     
+      
 };
 
 // Function to get element value by ID
