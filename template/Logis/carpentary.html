@@ -134,11 +134,24 @@
               <a href="#" class="active">Customer Satisfaction</a>
               
             </div>
+            <form action="#" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
+              
+              <select id="location-select" class="form-control" aria-label="Select location">
+                  <option value="" selected disabled hidden>Select location</option>
+                  <option value="PALAI">PALAI</option>
+                  <option value="ETTUMANOOR">ETTUMANOOR</option>
+                  <option value="BHARANANGANAM">BHARANANGANAM</option>
+                  <option value="ERATTUPETTA">ERATTUPETTA</option>
+                  <option value="MANARCADU">MANARCADU</option>
+                  <option value="KOTTAYAM">KOTTAYAM</option>
+              </select>
+              <button type="submit" class="btn btn-primary">Search</button>
+          </form>
 
-            <h1>
+            <!--<h1>
             <p><b> we offer a comprehensive range of plumbing services to meet all your residential and commercial needs.
                Our team of experienced plumbers is dedicated to providing reliable and efficient solutions, ensuring your plumbing systems are functioning optimally.</b></p></h1>
-           </div>
+            --></div>
 
           <div class="col-lg-8">
             <img src="https://media.istockphoto.com/id/1458711335/photo/male-wood-furniture-joiner-work-in-diy-wooden-workshop-real-authentic-people-worker.webp?b=1&s=170667a&w=0&k=20&c=MYhOSwYt7QwT4c8gBp3lCZZMje4r3QydPKFx4zBN2mI=" width="500">
@@ -257,8 +270,8 @@
           <span class="star">&#9733;</span>
           <span class="star">&#9733;</span>
         </div> -->
-        <button style="background-color: blue; color: white; align-items: center;">CALL NOW</button></centre>
-        <a href="feedback.html"></a><button style="background-color: blue; color: white; align-items: center;">FEEDBACK</button></centre></a>
+        <button class="button-call-now" style="background-color: blue; color: white;" onclick="callNowClicked(this)">CALL NOW</button>
+          <button class="button-feedback" style="background-color: blue; color: white;" onclick="feedbackClicked(this)">FEEDBACK</button>
         </div>
       </div><!-- End Card Item -->
 
