@@ -22,6 +22,7 @@ function updateDatabaseFromRegisterSP2() {
     const email = urlParams.get('email');
     const fullname = urlParams.get('fullname');
     const role = urlParams.get('role');
+    const uid = urlParams.get('uid');
 
     if (role === 'service provider') {
         // Get additional details from registersp2.html
@@ -35,7 +36,7 @@ function updateDatabaseFromRegisterSP2() {
         const postalCode = getElementVal('postalCode');
 
         // Update data in the database
-        samplessdb.orderByChild("email").equalTo(email).once("value", function(snapshot) {
+       /* samplessdb.orderByChild("email").equalTo(email).once("value", function(snapshot) {
             snapshot.forEach(function(child) {
                 child.ref.update({
                     fieldOfWork: fieldOfWork,
@@ -46,7 +47,22 @@ function updateDatabaseFromRegisterSP2() {
                     city: city,
                     region: region,
                     postalCode: postalCode
-                }, function(error) {
+                },
+                */
+                samplessdb.child(uid).update({ // Use the user's UID as the key
+                    email: email,
+                    fullname: fullname,
+                    role: role,
+                    fieldOfWork: fieldOfWork,
+                    qualification: qualification,
+                    yearsOfExperience: yearsOfExperience,
+                    birthDate: birthDate,
+                    district: district,
+                    city: city,
+                    region: region,
+                    postalCode: postalCode
+                }, 
+                function(error) {
                     if (error) {
                         console.error("Error updating database:", error);
                     } else {
@@ -54,10 +70,10 @@ function updateDatabaseFromRegisterSP2() {
                         window.location.href = "../index.html";
                     }
                 });
-            });
-        });
-    }
-}
+            }
+        }
+    
+
 
 // Function to get element value by ID
 function getElementVal(id) {
