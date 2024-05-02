@@ -1,0 +1,38 @@
+.select-box select {
+    height: 100%;
+    width: calc(100% - 12px); /* Adjust width to leave space for the button */
+    outline: none;
+    border: none;
+    color: #707070;
+    font-size: 1rem;
+}
+
+.column {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Add space between the elements in the row */
+}
+
+.input-half {
+    width: calc(50% - 6px); /* Adjust width to evenly distribute the elements */
+    margin-right: 6px; /* Add margin between the elements */
+}
+
+button[type="submit"] {
+    width: calc(50% - 6px); /* Adjust width to evenly distribute the elements */
+    margin-left: 6px; /* Add margin between the elements */
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch; /* Ensure items stretch to match height */
+}
+
+.input-half {
+    flex: 1; /* Take up equal space within the row */
+    margin-right: 10px; /* Add margin between elements */
+}
+
+.select-box select, button[type="submit"] {
+    width: 100%; /* Ensure items take full width */
+}
