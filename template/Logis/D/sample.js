@@ -32,8 +32,8 @@ function updateDatabaseFromRegisterSP2() {
         const birthDate = getElementVal('birthDate');
         const district = getElementVal('district');
         const city = getElementVal('city');
-        const region = getElementVal('region');
-        const postalCode = getElementVal('postalCode');
+        const description = getElementVal('description');
+        const contactnum = getElementVal('contactnum');
 
         // Update data in the database
        /* samplessdb.orderByChild("email").equalTo(email).once("value", function(snapshot) {
@@ -59,8 +59,8 @@ function updateDatabaseFromRegisterSP2() {
                     birthDate: birthDate,
                     district: district,
                     city: city,
-                    region: region,
-                    postalCode: postalCode
+                    description:description,
+                    contactnum: contactnum
                 }, 
                 function(error) {
                     if (error) {
