@@ -9,13 +9,62 @@ const firebaseConfig = {
     appId: "1:567460102691:web:8b542dcc39b923a2926796",
     measurementId: "G-SQMMBEY43H"
 };
+
+
+   // Initialize Firebase
+   firebase.initializeApp(firebaseConfig);
+
+   // Function to handle user registration
+   function registerUser(event) {
+       event.preventDefault(); // Prevent default form submission
+
+       // Get user input values
+       const fullName = document.getElementById('fullname').value;
+       const email = document.getElementById('email').value;
+       const password = document.getElementById('password').value;
+       const role = document.getElementById('role').value;
+
+       // Create user with email and password
+       firebase.auth().createUserWithEmailAndPassword(email, password)
+           .then((userCredential) => {
+               // Signed up successfully
+               const user = userCredential.user;
+               console.log("User signed up:", user);
+
+               // Store additional user data in Firebase Database
+               firebase.database().ref('users/' + user.uid).set({
+                   fullName: fullName,
+                   email: email,
+                   role: role
+               }).then(() => {
+                   console.log("User data saved to database");
+                   // Redirect to another page or show success message
+               }).catch((error) => {
+                   console.error("Error saving user data:", error);
+               });
+           })
+           .catch((error) => {
+               // Handle errors
+               const errorCode = error.code;
+               const errorMessage = error.message;
+               console.error("Error signing up user:", errorMessage);
+           });
+   }
+
+   // Add event listener to form submission
+   document.getElementById('signUp').addEventListener('submit', registerUser);
+
+
+
+
+
 firebase.initializeApp(firebaseConfig);
 
 // Reference to the Firebase Realtime Database
 var samplessdb = firebase.database().ref('commonsignup3');
 
 // Function to update database from registersp2.html
-document.getElementById("signUp1").addEventListener('click', updateDatabaseFromRegisterSP2);
+document.getElementById("signUp").addEventListener('click', updateDatabaseFromRegisterSP2);
 
 function updateDatabaseFromRegisterSP2() {
     const urlParams = new URLSearchParams(window.location.search);
