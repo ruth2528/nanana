@@ -24,6 +24,9 @@ body {
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
+.description{
+  height:100px;
+}
 .container header {
   font-size: 1.5rem;
   color: #333;
@@ -160,7 +163,7 @@ body {
 .column {
   display: flex;
   color: #707070;
-
+  height:100px;
   margin-top: 8px;
   border: 1px solid #ddd;
   border-radius: 6px;
