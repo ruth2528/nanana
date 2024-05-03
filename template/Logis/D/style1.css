@@ -1,4 +1,5 @@
 /* Import Google font - Poppins */
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 * {
   margin: 0;
@@ -106,6 +107,15 @@ body {
 .address :where(input, .select-box) {
   margin-top: 15px;
 }
+/*.select-box select {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  color: #707070;
+  font-size: 1rem;
+}*/
+
 .select-box select {
   height: 100%;
   width: 100%;
@@ -113,7 +123,23 @@ body {
   border: none;
   color: #707070;
   font-size: 1rem;
+  /* Adjust height and font size for the dropdown */
+ /* height: 50px; /* Set the height as desired */
+  /*font-size: 1rem; /* Adjust font size as needed */
 }
+
+/*cityDropdown select {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  color: #707070;
+  font-size: 1rem;
+  /* Adjust height and font size for the dropdown */
+ /* height: 50px; /* Set the height as desired */
+  /*font-size: 1rem; /* Adjust font size as needed */
+/*}*/
+
 .form button {
   height: 55px;
   width: 100%;
@@ -128,6 +154,20 @@ body {
 }
 .form button:hover {
   background: rgb(151, 143, 222);
+}
+
+
+.column {
+  display: flex;
+  gap: 10px;
+}
+
+.input-half {
+  flex: 1;
+}
+
+.input-box.address {
+  margin-top: 15px;
 }
 /*Responsive*/
 @media screen and (max-width: 500px) {
