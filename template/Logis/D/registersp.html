@@ -49,11 +49,9 @@
                 </div>
             </div>
             <div class="input-box address">
-                
+                <label>Address</label>
                 <div class="column">
-                   
                     <div class="input-half">
-                       <label>District </label>
                         <div class="select-box">
                             <select id="district" required>
                                 <option hidden>Select District</option>
@@ -74,21 +72,17 @@
                             </select>
                         </div>
                     </div>
-                  
-                        
                     <div class="input-half">
-                        <label>Contact </label>
-                        <input id="contactnum" type="text" placeholder="Enter your phone number " required />
-                    
-
+                        <div class="select-box">
+                            <select id="city" required>
+                                <option selected hidden>Select City</option>
+                            </select>
+                        </div>
                     </div>
-                
                 </div>
-                
-                <div class="input-half">
-                    <br><label>Description</label><br>
-                    <input id="description" type="text" placeholder="give a brief description about yourself" required />
-                   
+                <div class="column">
+                    <input id="description" type="text" placeholder="give a brief description" required />
+                    <input id="contactnum" type="text" placeholder="Enter your contact number here " required />
                 </div>
             </div>
         
@@ -124,6 +118,13 @@
 };
 
 
+        // Add default "Select City" option
+
+var defaultOption = document.createElement("option");
+        defaultOption.text = "Select City";
+        defaultOption.selected = true;
+        cityDropdown.add(defaultOption);
+        
             // Populate cities dropdown
             cities[district].forEach(function(city) {
                 var option = document.createElement("option");
