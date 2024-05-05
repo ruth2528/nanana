@@ -75,7 +75,7 @@
                     <div class="input-half">
                         <div class="select-box">
                             <select id="city" required>
-                                <option hidden>Select City</option>
+                                <option selected hidden>Select City</option>
                             </select>
                         </div>
                     </div>
@@ -118,6 +118,13 @@
 };
 
 
+        // Add default "Select City" option
+
+var defaultOption = document.createElement("option");
+        defaultOption.text = "Select City";
+        defaultOption.selected = true;
+        cityDropdown.add(defaultOption);
+        
             // Populate cities dropdown
             cities[district].forEach(function(city) {
                 var option = document.createElement("option");
