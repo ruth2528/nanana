@@ -45,7 +45,7 @@ function submitform(e) {
             if (role === 'customer') {
                 // Save data for customer
                 savemessage(user.uid,email, fullname, password, role);
-                window.location.href = "../indesasu.html";
+                window.location.href = "../SP/indexasisp.html";
             } else if (role === 'service provider') {
                 
                 // Redirect to register.html for additional information
