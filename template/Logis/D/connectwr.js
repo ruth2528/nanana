@@ -1,3 +1,5 @@
+
+
 const firebaseConfig = {
     apiKey: "AIzaSyDEWizSHweYkjg51Q7xUCl1-Y3WQkBRVLI",
     authDomain: "rapidrepairs-4.firebaseapp.com",
@@ -45,7 +47,7 @@ function submitform(e) {
             if (role === 'customer') {
                 // Save data for customer
                 savemessage(user.uid,email, fullname, password, role);
-                window.location.href = "../indesasu.html";
+                window.location.href = "../C/indexasic.html";
             } else if (role === 'service provider') {
                 
                 // Redirect to register.html for additional information
