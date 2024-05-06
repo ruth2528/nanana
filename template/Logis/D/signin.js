@@ -44,30 +44,11 @@ function signIn(event) {
             const role = userData[Object.keys(userData)[0]].role;
             // Redirect based on user role
             if (role === 'customer') {
-                
-              window.location.href = '../index.html';
-              // Update UI to show sign-out link
-          document.getElementById("signin-signout-link").innerText = "SIGN OUT";
-          document.getElementById("signin-signout-link").removeAttribute("href"); // Remove the href attribute to prevent navigation
-          document.getElementById("signin-signout-link").removeEventListener("click", signIn); // Remove sign-in listener
-          document.getElementById("signin-signout-link").addEventListener("click", signOut); // Add sign-out listener
-              
+              window.location.href = '../C/indexasic.html';
             } else if (role === 'service provider') {
               window.location.href = '../SP/indexasisp.html';
             }
-
-
-          // Update UI to show sign-out link
-          document.getElementById("signin-signout-link").innerText = "SIGN OUT";
-          document.getElementById("signin-signout-link").removeAttribute("href"); // Remove the href attribute to prevent navigation
-          document.getElementById("signin-signout-link").removeEventListener("click", signIn); // Remove sign-in listener
-          document.getElementById("signin-signout-link").addEventListener("click", signOut); // Add sign-out listener
-          } 
-
-   
-
-
-          else {
+          } else {
             alert('Incorrect password');
           }
         } else {
@@ -84,6 +65,4 @@ function signIn(event) {
         alert("Unexpected error occurred. Please Sign-UP if you are not already signed up.");
       }
     });
-
-  
 }
