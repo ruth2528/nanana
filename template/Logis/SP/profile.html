@@ -205,6 +205,15 @@ onAuthStateChanged(auth, (user) => {
           document.getElementById('username').textContent = userData.fullname;
           document.getElementById('useremail').textContent = userData.email;
           document.getElementById('userrole').textContent = userData.role;
+          document.getElementById('fieldOfWork').textContent = userData.fieldOfWork;
+          document.getElementById('yearsOfExperience').textContent = userData.yearsOfExperience;
+          document.getElementById('birthDate').textContent = userData.birthDate;
+          document.getElementById('city').textContent = userData.city;
+          document.getElementById('qualification').textContent = userData.qualification;
+          document.getElementById('district').textContent = userData.district;
+          document.getElementById('contactnum').textContent = userData.contactnum;
+
+
         });
       } else {
        
