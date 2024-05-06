@@ -27,7 +27,7 @@ function submitform(e) {
     // Get form values
     var email = getElementVal('email');
     var password = getElementVal('password');
-    var fullname = getElementVal('name');
+    var fullname = getElementVal('fullname');
     var role = getElementVal('role');
 
     // Log form values
