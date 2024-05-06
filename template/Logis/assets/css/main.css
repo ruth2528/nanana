@@ -1787,7 +1787,9 @@ section {
 .hero form .btn-primary:hover {
   background-color: #2756ff;
 }
-
+.pic{
+  padding-left:20px;
+}
 .hero .stats-item {
   padding: 30px;
   width: 100%;
