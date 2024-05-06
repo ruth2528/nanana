@@ -67,7 +67,7 @@ function updateDatabaseFromRegisterSP2() {
                         console.error("Error updating database:", error);
                     } else {
                         // Database update successful, now redirect
-                        window.location.href = "../SP/index.html";
+                        window.location.href = "../SP/indexasisp.html";
                     }
                 });
             }
